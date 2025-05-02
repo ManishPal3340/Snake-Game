@@ -1,48 +1,90 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-.body
-{
+
+.body {
     background: url("nature1.jpg");
     min-height: 100vh;
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-#board
-{
-    background: linear-gradient(blue,yellow);
-   width: 90vmin;
-   height: 92vmin;
-   border: 2px solid black;
-   display: grid;
-   grid-template-rows: repeat(20,1fr);
-   grid-template-columns: repeat(20,1fr);
 
-
+#board {
+    background: linear-gradient(blue, yellow);
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 500px;
+    max-height: 500px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
 }
-.head{
+
+.head {
     background-color: green;
-
 }
-.snake{
+
+.snake {
     background-color: aqua;
 }
-.food{
+
+.food {
     background-color: rgb(232, 8, 8);
-    
 }
-#score{
+
+#score {
     color: rgb(231, 222, 222);
-    font-size: 30px;
+    font-size: 5vmin;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-   
-    
-    /* padding-top: 300px; */
-    padding-bottom: 450px;
-      /* padding-left:300px ; */
+    margin-bottom: 2vmin;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#controls {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vmin;
+}
+
+#controls button {
+    font-size: 6vmin;
+    padding: 2vmin 4vmin;
+    margin: 1vmin;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.side-controls {
+    display: flex;
+    gap: 2vmin;
+}
+
+@media (max-width: 600px) {
+    #board {
+        width: 95vmin;
+        height: 95vmin;
+    }
+
+    #score {
+        font-size: 6vmin;
+        margin-bottom: 3vmin;
+    }
+
+    #controls {
+        display: flex;
+    }
 }
